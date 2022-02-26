@@ -216,13 +216,14 @@ nav ul ul li {
 }
 
 .article .featuredImage img {
-  max-width: 100%;
+  max-width: 300%;
   border-radius: 50px;
+  
 }
 
 .article .articleContent {
-  width: 70%;
-  float: left;
+  width: 65%;
+  float: right;
 }
 
 .article .articleContent a {
@@ -230,20 +231,22 @@ nav ul ul li {
 }
 
 .article .articleContent h3 {
-  margin-bottom: 0;
-  color: #FE052C;
+  
+  color: #993921;
+  margin-left: 15px;
 }
 
 .article .articleContent h6 {
   margin-top: 0;
-  color: #666;
+  color: blueviolet;
+  margin-left: 15px;
 }
 
 .article .impressions {
   width: 15%;
   float: right;
-  font-size: 30px;
-  margin-top: 15px;
+  font-size: 75%;
+  margin-top: 23px;
   text-align: right;
   color: #097FB2;
 }
