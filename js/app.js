@@ -85,7 +85,7 @@ var str = document.getElementById("text1").value;
         <img src="${thumbnail}" alt="" />
         </section>
         <section class="articleContent">
-            <a href="${articleUrl}"><h3>${title}</h3></a>
+        <a href="${articleUrl}" ><h3>${title}</h3></a>
             <h6>${publication}</h6>
         </section>
         <section class="impressions">
@@ -135,7 +135,7 @@ function getRedditApi() {
       <img src="${thumbnail}" alt="" />
       </section>
       <section class="articleContent">
-          <a href="${articleUrl}"><h3>${title}</h3></a>
+      <a href="${articleUrl}" ><h3>${title}</h3></a>
           <h6>${publication}</h6>
       </section>
       <section class="impressions">
@@ -229,8 +229,8 @@ function getGuardianApi() {
                 <img src="${thumbnail}" alt="" />
                 </section>
                 <section class="articleContent">
-                    <a href="${articleUrl}"><h3>${title}</h3></a>
-                    <h6>${publication}</h6>
+                  <a href="${articleUrl}" ><h3>${title}</h3></a>
+                  <h6>${publication}</h6>
                 </section>
                 <section class="impressions">
                   ${timestamp}
