@@ -30,43 +30,25 @@ source3Button.addEventListener("click", getRedditApi)
 source4Button.addEventListener("click", refreshPage)
 source5Button.addEventListener("click", searchBar)
 
+
+
+
+
 searchSection1.addEventListener("keypress", (event) => {
   if (event.keyCode === 13) {
     searchBar(event);
 searchSection1.value = "";
   }});
 
-/*Trying to get the below portion of the code to replace the top most test article on default page. */
 
 
-  fetch(redditApiKey)
-  .then((response) => response.json())
-  .then((data) => { 
-      console.log(data.data.children)
-     
-       
-      articleUrl = data.data.children[0].data.url
-      // description = article.data.title || ''
-      // publication = article.data.subreddit
-      // thumbnail = article.data.thumbnail || './images/articles_placeholder_1.jpg'
-      // title = article.data.title
-      // timestamp = new Date(article.publishedAt) || ''
-    //  console.log(articleUrl, description, publication, thumbnail, title, timestamp);
-    console.log(articleUrl)   
-  //  data.data.children.forEach((article) => {
-  //       console.log(article.data.url)   
-  //     articleUrl = article.data.url
-  //     description = article.data.title || ''
-  //     publication = article.data.subreddit
-  //     thumbnail = article.data.thumbnail || './images/articles_placeholder_1.jpg'
-  //     title = article.data.title
-  //     timestamp = new Date(article.publishedAt) || ''
-  //     console.log(articleUrl, description, publication, thumbnail, title, timestamp);
-  //     })
-     
-  })
-     
+
+/* this function links "bryans news api" as a button and refreshes back to defualt page with a clear console */
+function refreshPage() {
+  window.location.reload()
   
+}
+
 
 
 
@@ -125,11 +107,7 @@ var str = document.getElementById("text1").value;
 }
 
 
-/* this function links "bryans news api" as a button and refreshes back to defualt page with a clear console */
-function refreshPage() {
-  window.location.reload()
-  
-}
+
 
 function getRedditApi() {
   loaderDiv.classList.remove("hidden");
@@ -146,7 +124,7 @@ function getRedditApi() {
       publication = article.data.subreddit
       thumbnail = article.data.thumbnail || './images/articles_placeholder_1.jpg'
       title = article.data.title
-      timestamp = new Date(article.publishedAt) || ''
+      timestamp = new Date(article.webPublicationDate) || ''
       console.log (articleUrl, description, publication, thumbnail, title, timestamp);
 
       let newArticleNode = document.createElement('div')
@@ -206,8 +184,9 @@ fetch(newsApiEndPoint)
             <section class="featuredImage">
             <img src="${thumbnail}" alt="" />
             </section>
-            <section class="articleContent">
-                <a href="#"><h3>${title}</h3></a>
+            <section id="link" class="articleContent">
+                <a href="${articleUrl}" ><h3>${title}</h3></a>
+            
                 <h6>${publication}</h6>
             </section>
             <section class="impressions">
