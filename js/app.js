@@ -81,18 +81,19 @@ var str = document.getElementById("text1").value;
         console.log(newArticleNode);
         
         newArticleNode.innerHTML = `<article class="article">
-        <section class="featuredImage">
-        <img src="${thumbnail}" alt="" />
-        </section>
-        <section class="articleContent">
-        <a href="${articleUrl}" ><h3>${title}</h3></a>
-            <h6>${publication}</h6>
-        </section>
-        <section class="impressions">
-          ${timestamp}
-        </section>
-        <div class="clearfix"></div>
-      </article>`
+            <section class="featuredImage">
+            <img src="${thumbnail}" alt="" />
+            </section>
+            <section id="link" class="articleContent">
+                <a href="${articleUrl}" ><h3>${title}</h3></a>
+            
+                <h6>${publication}</h6>
+            </section>
+            <section class="impressions">
+              ${timestamp}
+            </section>
+            <div class="clearfix"></div>
+          </article>`
             mainArticleContainer.append(newArticleNode);
         console.log(newArticleNode);
       
@@ -131,18 +132,19 @@ function getRedditApi() {
       console.log(newArticleNode);
   
       newArticleNode.innerHTML = `<article class="article">
-      <section class="featuredImage">
-      <img src="${thumbnail}" alt="" />
-      </section>
-      <section class="articleContent">
-      <a href="${articleUrl}" ><h3>${title}</h3></a>
-          <h6>${publication}</h6>
-      </section>
-      <section class="impressions">
-        ${timestamp}
-      </section>
-      <div class="clearfix"></div>
-    </article>`
+            <section class="featuredImage">
+            <img src="${thumbnail}" alt="" />
+            </section>
+            <section id="link" class="articleContent">
+                <a href="${articleUrl}" ><h3>${title}</h3></a>
+            
+                <h6>${publication}</h6>
+            </section>
+            <section class="impressions">
+              ${timestamp}
+            </section>
+            <div class="clearfix"></div>
+          </article>`
           mainArticleContainer.append(newArticleNode);
       console.log(newArticleNode);
 
@@ -184,7 +186,7 @@ fetch(newsApiEndPoint)
             <section class="featuredImage">
             <img src="${thumbnail}" alt="" />
             </section>
-            <sectionclass="articleContent">
+            <section id="link" class="articleContent">
                 <a href="${articleUrl}" ><h3>${title}</h3></a>
             
                 <h6>${publication}</h6>
@@ -225,18 +227,19 @@ function getGuardianApi() {
                 console.log(newArticleNode);
                 
                 newArticleNode.innerHTML = `<article class="article">
-                <section class="featuredImage">
-                <img src="${thumbnail}" alt="" />
-                </section>
-                <section class="articleContent">
-                  <a href="${articleUrl}" ><h3>${title}</h3></a>
-                  <h6>${publication}</h6>
-                </section>
-                <section class="impressions">
-                  ${timestamp}
-                </section>
-                <div class="clearfix"></div>
-              </article>`
+            <section class="featuredImage">
+            <img src="${thumbnail}" alt="" />
+            </section>
+            <section id="link" class="articleContent">
+                <a href="${articleUrl}" ><h3>${title}</h3></a>
+            
+                <h6>${publication}</h6>
+            </section>
+            <section class="impressions">
+              ${timestamp}
+            </section>
+            <div class="clearfix"></div>
+          </article>`
                     mainArticleContainer.append(newArticleNode);
                 console.log(newArticleNode);
              
