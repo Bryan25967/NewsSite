@@ -66,7 +66,7 @@ var str = document.getElementById("text1").value;
     .then((response) => response.json())
     .then((data) => { 
         console.log(data);
-        data.articles.forEach((article) => {
+        data.articles.forEach(article => {
             
         articleUrl = article.url
         description = article.description || ''
