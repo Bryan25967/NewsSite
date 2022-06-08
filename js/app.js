@@ -6,7 +6,7 @@ const redditApiKey = `https://www.reddit.com/hot.json`;
 // code for CORS issues
 //  https://accesscontrolalloworiginall.herokuapp.com/
 
-const newsApiEndPoint =  `https://newsapi.org/v2/top-headlines?country=us&apiKey=${newsApiKey}`;
+const newsApiEndPoint =  `https://accesscontrolalloworiginall.herokuapp.com/https://newsapi.org/v2/top-headlines?country=us&apiKey=${newsApiKey}`;
 const guardianApiKeyEndPoint = `https://content.guardianapis.com/search?api-key=${guardianApiKey}`;
 
 
@@ -57,7 +57,7 @@ function refreshPage() {
 
 function searchBar(userInput) {
 var str = document.getElementById("text1").value;
-  const searchApi = `https://newsapi.org/v2/everything?q=${str}&from=2022&sortBy=relevancy&apiKey=${newsApiKey}`;
+  const searchApi = `https://accesscontrolalloworiginall.herokuapp.com/https://newsapi.org/v2/everything?q=${str}&from=2022&sortBy=relevancy&apiKey=${newsApiKey}`;
    loaderDiv.classList.remove("hidden");
   mainArticleContainer.innerHTML = "";
   
@@ -66,7 +66,7 @@ var str = document.getElementById("text1").value;
     .then((response) => response.json())
     .then((data) => { 
         console.log(data);
-        data.articles.forEach(article => {
+        data.articles.forEach((article) => {
             
         articleUrl = article.url
         description = article.description || ''
