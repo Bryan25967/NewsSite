@@ -6,7 +6,7 @@ const redditApiKey = `https://www.reddit.com/hot.json`;
 // code for CORS issues
 //  https://accesscontrolalloworiginall.herokuapp.com/
 
-const newsApiEndPoint =  `https://accesscontrolalloworiginall.herokuapp.com/https://newsapi.org/v2/top-headlines?country=us&apiKey=${newsApiKey}`;
+const newsApiEndPoint =  `https://newsapi.org/v2/top-headlines?country=us&apiKey=${newsApiKey}`;
 const guardianApiKeyEndPoint = `https://content.guardianapis.com/search?api-key=${guardianApiKey}`;
 
 
