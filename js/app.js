@@ -1,5 +1,9 @@
 
-const newsApiKey = `5f9f443557f145018cffca6760b150a8`;
+// below is TheNewsAPI key
+// const newsApiKey = `5f9f443557f145018cffca6760b150a8`;
+
+// below is new newsapi
+const newsApiKey = `pub_9951a9a81bf2e52c569228f53a06204cbd4b`; 
 const guardianApiKey = `ede7b4ab-8ef2-42e2-8029-f345c6c4a4dc`;
 const redditApiKey = `https://www.reddit.com/hot.json`;
 
@@ -10,7 +14,9 @@ const redditApiKey = `https://www.reddit.com/hot.json`;
 // http://www.stackoverflow.com/
 
 
-const newsApiEndPoint =  `https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines?country=us&apiKey=${newsApiKey}`;
+// const newsApiEndPoint =  `https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines?country=us&apiKey=${newsApiKey}`;
+
+const newsApiEndPoint =  `https://newsdata.io/api/1/news?apikey=${newsApiKey}&country=ca,us,gb`;
 const guardianApiKeyEndPoint = `https://content.guardianapis.com/search?api-key=${guardianApiKey}`;
 
 
@@ -61,7 +67,7 @@ function refreshPage() {
 
 function searchBar(userInput) {
 var str = document.getElementById("text1").value;
-  const searchApi = `https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything?q=${str}&from=2022&sortBy=relevancy&apiKey=${newsApiKey}`;
+  const searchApi = `https://newsapi.org/v2/everything?q=${str}&from=2022&sortBy=relevancy&apiKey=${newsApiKey}`;
    loaderDiv.classList.remove("hidden");
   mainArticleContainer.innerHTML = "";
   
@@ -163,6 +169,52 @@ function getRedditApi() {
 
 
 
+// function getNewsApi() {
+
+//   loaderDiv.classList.remove("hidden");
+//   mainArticleContainer.innerHTML = "";
+
+// fetch(newsApiEndPoint)
+//         .then((response) => response.json())
+//         .then((data) => { 
+//             console.log(data);
+//             data.articles.forEach((article) => {
+                
+//             articleUrl = article.url
+//             description = article.description || ''
+//             publication = article.source.name
+//             thumbnail = article.urlToImage || './images/articles_placeholder_1.jpg'
+//             title = article.title
+//             timestamp = new Date(article.publishedAt) || ''
+//             console.log (articleUrl, description, publication, thumbnail, title, timestamp);
+            
+          
+//             let newArticleNode = document.createElement('div')
+//             console.log(newArticleNode);
+            
+//             newArticleNode.innerHTML = `<article class="article">
+//             <section class="featuredImage">
+//             <img src="${thumbnail}" alt="" />
+//             </section>
+//             <section id="link" class="articleContent">
+//                 <a href="${articleUrl}" ><h3>${title}</h3></a>
+            
+//                 <h6>${publication}</h6>
+//             </section>
+//             <section class="impressions">
+//               ${timestamp}
+//             </section>
+//             <div class="clearfix"></div>
+//           </article>`
+//                 mainArticleContainer.append(newArticleNode);
+//             console.log(newArticleNode);
+          
+//       })
+//       loaderDiv.classList.add("hidden");
+//    })
+// }
+
+
 function getNewsApi() {
 
   loaderDiv.classList.remove("hidden");
@@ -172,15 +224,15 @@ fetch(newsApiEndPoint)
         .then((response) => response.json())
         .then((data) => { 
             console.log(data);
-            data.articles.forEach((article) => {
+            data.results.forEach((results) => {
                 
-            articleUrl = article.url
-            description = article.description || ''
-            publication = article.source.name
-            thumbnail = article.urlToImage || './images/articles_placeholder_1.jpg'
-            title = article.title
-            timestamp = new Date(article.publishedAt) || ''
-            console.log (articleUrl, description, publication, thumbnail, title, timestamp);
+            articleUrl = results.link
+            description = results.description || ''
+            publication = results.source_id
+            thumbnail = results.image_url || './images/articles_placeholder_1.jpg'
+            title = results.title
+            timestamp = new Date(results.pubDate) || ''
+            console.log (articleUrl, description, thumbnail, title, timestamp,);
             
           
             let newArticleNode = document.createElement('div')
