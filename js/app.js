@@ -4,9 +4,9 @@ const guardianApiKey = `ede7b4ab-8ef2-42e2-8029-f345c6c4a4dc`;
 const redditApiKey = `https://www.reddit.com/hot.json`;
 
 // code for CORS issues
-//  https://accesscontrolalloworiginall.herokuapp.com/
-// https://cors-anywhere.herokuapp.com/
-// { corsProxyUrl: 'https://cors-anywhere.herokuapp.com/' }
+//   https://accesscontrolalloworiginall.herokuapp.com/
+//  https://cors-anywhere.herokuapp.com/
+//  { corsProxyUrl: 'https://cors-anywhere.herokuapp.com/
 
 const newsApiEndPoint =  `https://newsapi.org/v2/top-headlines?country=us&apiKey=${newsApiKey}`;
 const guardianApiKeyEndPoint = `https://content.guardianapis.com/search?api-key=${guardianApiKey}`;
