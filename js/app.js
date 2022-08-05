@@ -137,7 +137,7 @@ function searchBar(userInput) {
 //         articleUrl = article.url
 //         description = article.description || ''
 //         publication = article.source.name
-//         thumbnail = article.urlToImage || './images/articles_placeholder_1.jpg'
+//         thumbnail = article.urlToImage || './images/articles_placeholder_1.png'
 //         title = article.title
 //         timestamp = new Date(article.publishedAt) || ''
 //         console.log (articleUrl, description, publication, thumbnail, title, timestamp);
@@ -191,7 +191,7 @@ function getRedditApi() {
       articleUrl = article.data.url
       description = article.data.title || ''
       publication = article.data.subreddit
-      thumbnail = article.data.thumbnail || './images/articles_placeholder_1.jpg'
+      thumbnail = article.data.thumbnail || './images/articles_placeholder_1.png'
       title = article.data.title
       timestamp = new Date(article.webPublicationDate) || ''
       console.log (articleUrl, description, publication, thumbnail, title, timestamp);
@@ -334,7 +334,7 @@ function getGuardianApi() {
                 articleUrl = article.webUrl;
                 description = article.webTitle || "";
                 publication = article.sectionName;
-                thumbnail = article.urlToImage || "./images/article_placeholder_1.jpg";
+                thumbnail = article.image_url || './images/articles_placeholder_1.png'
                 title = article.webTitle;
                 timestamp = new Date(article.webPublicationDate) || "";
                 console.log(articleUrl, description, publication, thumbnail, title, timestamp);
@@ -343,9 +343,9 @@ function getGuardianApi() {
                 console.log(newArticleNode);
                 
                 newArticleNode.innerHTML = `<article class="article">
-            <section class="featuredImage">
-            <img src="${thumbnail}" alt="" />
-            </section>
+                <section class="featuredImage">
+                <img src="${thumbnail}" alt="" />
+                </section>
             <section id="link" class="articleContent">
                 <a href="${articleUrl}" ><h3>${title}</h3></a>
             
