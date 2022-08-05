@@ -7,8 +7,10 @@ const redditApiKey = `https://www.reddit.com/hot.json`;
 //   https://accesscontrolalloworiginall.herokuapp.com/
 //  https://cors-anywhere.herokuapp.com/
 //  { corsProxyUrl: 'https://cors-anywhere.herokuapp.com/
+// http://www.stackoverflow.com/
+// https://api-id.execute-api.region.amazonaws.com/stage-name
 
-const newsApiEndPoint =  `https://newsapi.org/v2/top-headlines?country=us&apiKey=${newsApiKey}`;
+const newsApiEndPoint =  `http://www.stackoverflow.com/https://newsapi.org/v2/top-headlines?country=us&apiKey=${newsApiKey}`;
 const guardianApiKeyEndPoint = `https://content.guardianapis.com/search?api-key=${guardianApiKey}`;
 
 
