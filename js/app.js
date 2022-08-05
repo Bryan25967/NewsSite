@@ -59,63 +59,121 @@ function refreshPage() {
   
 }
 
+// Below is the new NEWSAPI Search
+
+
+function searchBar(userInput) {
+  var str = document.getElementById("text1").value;
+    const searchApi = `https://newsdata.io/api/1/news?apikey=${newsApiKey}&q=${str}&language=en`;
+     loaderDiv.classList.remove("hidden");
+    mainArticleContainer.innerHTML = "";
+    
+  
+      fetch(searchApi)
+      .then((response) => response.json())
+      .then((data) => { 
+          console.log(data);
+          data.results.forEach((results) => {
+                
+            articleUrl = results.link
+            description = results.description || ''
+            publication = results.source_id
+            thumbnail = results.image_url || './images/articles_placeholder_1.png'
+            title = results.title
+            timestamp = new Date(results.pubDate) || ''
+            console.log (articleUrl, description, thumbnail, title, timestamp,);
+          
+        
+          let newArticleNode = document.createElement('div')
+          console.log(newArticleNode);
+          
+          newArticleNode.innerHTML = `<article class="article">
+              <section class="featuredImage">
+              <img src="${thumbnail}" alt="" />
+              </section>
+              <section id="link" class="articleContent">
+                  <a href="${articleUrl}" ><h3>${title}</h3></a>
+              
+                  <h6>${publication}</h6>
+              </section>
+              <section class="impressions">
+                ${timestamp}
+              </section>
+              <div class="clearfix"></div>
+            </article>`
+              mainArticleContainer.append(newArticleNode);
+          console.log(newArticleNode);
+        
+    })
+    loaderDiv.classList.add("hidden");
+  })
+  
+  
+     
+     console.log(str + " i got clicked");
+     loaderDiv.classList.add("hidden");
+  }
 
 
 
+// Below is Orginal TheNewsAP Search
 
 /* below trying to get the user input in the search feild to be input into the api news link bring up a list of there tailored results */
 
-function searchBar(userInput) {
-var str = document.getElementById("text1").value;
-  const searchApi = `https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything?q=${str}&from=2022&sortBy=relevancy&apiKey=${newsApiKey}`;
-   loaderDiv.classList.remove("hidden");
-  mainArticleContainer.innerHTML = "";
+
+// function searchBar(userInput) {
+// var str = document.getElementById("text1").value;
+//   const searchApi = `https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything?q=${str}&from=2022&sortBy=relevancy&apiKey=${newsApiKey}`;
+//    loaderDiv.classList.remove("hidden");
+//   mainArticleContainer.innerHTML = "";
   
 
-    fetch(searchApi)
-    .then((response) => response.json())
-    .then((data) => { 
-        console.log(data);
-        data.articles.forEach((article) => {
+//     fetch(searchApi)
+//     .then((response) => response.json())
+//     .then((data) => { 
+//         console.log(data);
+//         data.articles.forEach((article) => {
             
-        articleUrl = article.url
-        description = article.description || ''
-        publication = article.source.name
-        thumbnail = article.urlToImage || './images/articles_placeholder_1.jpg'
-        title = article.title
-        timestamp = new Date(article.publishedAt) || ''
-        console.log (articleUrl, description, publication, thumbnail, title, timestamp);
+//         articleUrl = article.url
+//         description = article.description || ''
+//         publication = article.source.name
+//         thumbnail = article.urlToImage || './images/articles_placeholder_1.jpg'
+//         title = article.title
+//         timestamp = new Date(article.publishedAt) || ''
+//         console.log (articleUrl, description, publication, thumbnail, title, timestamp);
         
       
-        let newArticleNode = document.createElement('div')
-        console.log(newArticleNode);
+//         let newArticleNode = document.createElement('div')
+//         console.log(newArticleNode);
         
-        newArticleNode.innerHTML = `<article class="article">
-            <section class="featuredImage">
-            <img src="${thumbnail}" alt="" />
-            </section>
-            <section id="link" class="articleContent">
-                <a href="${articleUrl}" ><h3>${title}</h3></a>
+//         newArticleNode.innerHTML = `<article class="article">
+//             <section class="featuredImage">
+//             <img src="${thumbnail}" alt="" />
+//             </section>
+//             <section id="link" class="articleContent">
+//                 <a href="${articleUrl}" ><h3>${title}</h3></a>
             
-                <h6>${publication}</h6>
-            </section>
-            <section class="impressions">
-              ${timestamp}
-            </section>
-            <div class="clearfix"></div>
-          </article>`
-            mainArticleContainer.append(newArticleNode);
-        console.log(newArticleNode);
+//                 <h6>${publication}</h6>
+//             </section>
+//             <section class="impressions">
+//               ${timestamp}
+//             </section>
+//             <div class="clearfix"></div>
+//           </article>`
+//             mainArticleContainer.append(newArticleNode);
+//         console.log(newArticleNode);
       
-  })
-  loaderDiv.classList.add("hidden");
-})
+//   })
+//   loaderDiv.classList.add("hidden");
+// })
 
 
    
-   console.log(str + " i got clicked");
-   loaderDiv.classList.add("hidden");
-}
+//    console.log(str + " i got clicked");
+//    loaderDiv.classList.add("hidden");
+// }  
+
+  
 
 
 
