@@ -10,7 +10,7 @@ const redditApiKey = `https://www.reddit.com/hot.json`;
 // http://www.stackoverflow.com/
 // https://api-id.execute-api.region.amazonaws.com/stage-name
 
-const newsApiEndPoint =  `http://www.stackoverflow.com/https://newsapi.org/v2/top-headlines?country=us&apiKey=${newsApiKey}`;
+const newsApiEndPoint =  `https://api-id.execute-api.region.amazonaws.com/stage-name/https://newsapi.org/v2/top-headlines?country=us&apiKey=${newsApiKey}`;
 const guardianApiKeyEndPoint = `https://content.guardianapis.com/search?api-key=${guardianApiKey}`;
 
 
