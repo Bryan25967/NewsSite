@@ -8,9 +8,9 @@ const redditApiKey = `https://www.reddit.com/hot.json`;
 //  https://cors-anywhere.herokuapp.com/
 //  { corsProxyUrl: 'https://cors-anywhere.herokuapp.com/
 // http://www.stackoverflow.com/
-// https://api-id.execute-api.region.amazonaws.com/stage-name
 
-const newsApiEndPoint =  `https://api-id.execute-api.region.amazonaws.com/stage-name/https://newsapi.org/v2/top-headlines?country=us&apiKey=${newsApiKey}`;
+
+const newsApiEndPoint =  `https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines?country=us&apiKey=${newsApiKey}`;
 const guardianApiKeyEndPoint = `https://content.guardianapis.com/search?api-key=${guardianApiKey}`;
 
 
@@ -61,7 +61,7 @@ function refreshPage() {
 
 function searchBar(userInput) {
 var str = document.getElementById("text1").value;
-  const searchApi = `https://newsapi.org/v2/everything?q=${str}&from=2022&sortBy=relevancy&apiKey=${newsApiKey}`;
+  const searchApi = `https://accesscontrolalloworiginall.herokuapp.com/https://newsapi.org/v2/everything?q=${str}&from=2022&sortBy=relevancy&apiKey=${newsApiKey}`;
    loaderDiv.classList.remove("hidden");
   mainArticleContainer.innerHTML = "";
   
