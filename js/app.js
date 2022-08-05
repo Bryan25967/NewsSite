@@ -16,7 +16,7 @@ const redditApiKey = `https://www.reddit.com/hot.json`;
 
 // const newsApiEndPoint =  `https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines?country=us&apiKey=${newsApiKey}`;
 
-const newsApiEndPoint =  `https://newsdata.io/api/1/news?apikey=${newsApiKey}&country=ca,us,gb`;
+const newsApiEndPoint =  `https://newsdata.io/api/1/news?apikey=${newsApiKey}&country=ca,us,gb,au,ru&language=en`;
 const guardianApiKeyEndPoint = `https://content.guardianapis.com/search?api-key=${guardianApiKey}`;
 
 
@@ -67,7 +67,7 @@ function refreshPage() {
 
 function searchBar(userInput) {
 var str = document.getElementById("text1").value;
-  const searchApi = `https://newsapi.org/v2/everything?q=${str}&from=2022&sortBy=relevancy&apiKey=${newsApiKey}`;
+  const searchApi = `https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything?q=${str}&from=2022&sortBy=relevancy&apiKey=${newsApiKey}`;
    loaderDiv.classList.remove("hidden");
   mainArticleContainer.innerHTML = "";
   
@@ -167,7 +167,7 @@ function getRedditApi() {
 
 
 
-
+// TheNews API logic below
 
 // function getNewsApi() {
 
@@ -214,6 +214,8 @@ function getRedditApi() {
 //    })
 // }
 
+
+// News Data API set test
 
 function getNewsApi() {
 
