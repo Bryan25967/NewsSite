@@ -231,7 +231,7 @@ fetch(newsApiEndPoint)
             articleUrl = results.link
             description = results.description || ''
             publication = results.source_id
-            thumbnail = results.image_url || './images/articles_placeholder_1.jpg'
+            thumbnail = results.image_url || './images/articles_placeholder_1.png'
             title = results.title
             timestamp = new Date(results.pubDate) || ''
             console.log (articleUrl, description, thumbnail, title, timestamp,);
