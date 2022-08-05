@@ -57,7 +57,7 @@ function refreshPage() {
 
 function searchBar(userInput) {
 var str = document.getElementById("text1").value;
-  const searchApi = `https://accesscontrolalloworiginall.herokuapp.com/https://newsapi.org/v2/everything?q=${str}&from=2022&sortBy=relevancy&apiKey=${newsApiKey}`;
+  const searchApi = `https://newsapi.org/v2/everything?q=${str}&from=2022&sortBy=relevancy&apiKey=${newsApiKey}`;
    loaderDiv.classList.remove("hidden");
   mainArticleContainer.innerHTML = "";
   
